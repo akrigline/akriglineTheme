@@ -34,12 +34,18 @@
 <script>window.jQuery || document.write('<script src="<?php bloginfo('template_path'); ?>/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 
 <script src="<?php bloginfo('template_path'); ?>/js/vendor/bootstrap.min.js"></script>
-<script src="<?php bloginfo('template_path'); ?>/js/vendor/jquery.easing.1.3.js"></script>
-<script src="<?php bloginfo('template_path'); ?>/js/vendor/jquery.sticky.js"></script>
-<script src="<?php bloginfo('template_path'); ?>/js/vendor/jquery.scrollTo.min.js"></script>
-<script src="<?php bloginfo('template_path'); ?>/js/vendor/jquery.localScroll.min.js"></script>
-<script src="<?php bloginfo('template_path'); ?>/js/vendor/morphext.min.js"></script>
-<script src="<?php bloginfo('template_path'); ?>/js/vendor/jquery.parallax.min.js"></script>
+
+<?php if ( is_front_page() ) : ?>
+
+  <script src="<?php bloginfo('template_path'); ?>/js/vendor/jquery.easing.1.3.js"></script>
+  <script src="<?php bloginfo('template_path'); ?>/js/vendor/jquery.sticky.js"></script>
+  <script src="<?php bloginfo('template_path'); ?>/js/vendor/jquery.scrollTo.min.js"></script>
+  <script src="<?php bloginfo('template_path'); ?>/js/vendor/jquery.localScroll.min.js"></script>
+  <script src="<?php bloginfo('template_path'); ?>/js/vendor/morphext.min.js"></script>
+  <script src="<?php bloginfo('template_path'); ?>/js/vendor/jquery.parallax.min.js"></script>
+
+<?php endif; ?>
+
 <script src="<?php bloginfo('template_path'); ?>/js/main.js"></script>
 
 

@@ -10,22 +10,21 @@
   <div class="imagePanner">
     <ul id="scene" class="panning list-unstyled">
       <li class="layer base" data-depth="0.00">
-        <img src="img/multi-me.jpg">
+        <img src="<?php bloginfo('template_directory'); ?>/img/multi-me.jpg" alt="">
       </li>
       <li class="layer" data-depth="0.1">
         <header class="name">
           <div class="centerme">
-            <img src="img/svg/codeKfinal.svg" alt="">
+            <img src="<?php bloginfo('template_directory'); ?>/img/svg/codeKfinal.svg" alt="akrigline">
             <h1>Andrew Krigline</h1>
             <div class="scrollThrough">
               <h3>Web Guru, Computer Geek, Front-End Developer, Tolkeinian, UI/UX Dabbler, PC Gamer, Story Enjoyer, 3D Printer</h3>
             </div>
-            
           </div>
         </header>
       </li>
       <li class="layer overlay" data-depth="0.0">
-        <img src="img/multi-me-overlay.png">
+        <img src="<?php bloginfo('template_directory'); ?>/img/multi-me-overlay.png" alt="">
       </li>
     </ul>
   </div>
