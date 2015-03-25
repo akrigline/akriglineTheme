@@ -6,7 +6,8 @@
  *
  * @package akrigline
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -21,10 +22,9 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="<?php bloginfo('url'); ?>/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/bootstrap.min.css">
 
-	<script src="<?php bloginfo('template_path'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
-	<script src="<?php bloginfo('template_path'); ?>/js/vendor/picturefill.min.js"></script>
+	<script src="<?php bloginfo('template_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 
 <?php wp_head(); ?>
 </head>

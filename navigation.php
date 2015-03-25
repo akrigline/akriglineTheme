@@ -6,13 +6,11 @@
  */
 ?>
 
-
-<?php if ( is_front_page(); ) {
+<?php if ( is_front_page() ) {
   $url = '';
 } else {
-  $url = bloginfo('url') . '/';
+  $url = get_bloginfo('url') . '/';
 } ?>
-
 <nav class="navbar top-nav" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -24,11 +22,10 @@
         <span class="icon-bar"></span>
       </button>
       <a class="brand" href="<?php echo $url; ?>#welcome">
-        <img src="<?php bloginfo('template_path'); ?>/img/svg/codeKfinal.svg" alt="">
+        <img src="<?php bloginfo('template_directory'); ?>/img/svg/codeKfinal.svg" alt="">
         <span class="top-hide">Andrew Krigline</span>
       </a>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right cl-effect-1">
