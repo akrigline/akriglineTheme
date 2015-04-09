@@ -109,15 +109,41 @@ if (document.getElementById('home')) {
 };
 
 
+/* 
+Set up iFrame on Web Portfolio Pages 
+*/
+var iframeError;
+
+//Start the iFrame countdown after telling it where to load
+function change() {
+    var url = $('.viewport').attr('data-url');
+    console.log(url);
+    $('#web-preview').attr('src', url);
+    iframeError = setTimeout('error()', 10000);
+}
+
+//What to do if the iframe doesn't load within 10 seconds
+function error() {
+    $('#web-preview').remove();
+    $('.viewport').removeClass('loading');
+    $('#web-preview-img-lg').removeClass('sr-only');
+}
+
+//Initialize on document ready
+$(document).ready(change);
+
+//Stop the countdown when the iframe loads
+$('#web-preview').load( function () {
+    $('.viewport').removeClass('loading');
+    clearTimeout(iframeError);
+});
+
 /*
 Ask for Device Width
 and Iframe width
 Divide Device by iframe
 apply decimal to transform
 */
-$('.viewport iframe').load( function(){
-    $('.viewport').removeClass('loading');
-});
 
 function iframeWidth() {
     $device = $('.device');

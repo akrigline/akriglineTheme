@@ -6,9 +6,19 @@
 
 <div class="portfolio-single container clearfix">
   <div class="device device-desktop">
-    <div class="viewport loading">
-      <iframe src="<?php the_field('live_url'); ?>"></iframe>
+    <div class="viewport loading" data-url="<?php the_field('live_url'); ?>">
+      <iframe id="web-preview"></iframe>
+      <?php $preview_img_lg = get_field('web_preview_img_lg');
+            $preview_img_md = get_field('web_preview_img_md');
+            $preview_img_sm = get_field('web_preview_img_sm');
+            $preview_img_lg_url = $preview_img_lg['url'];
+            $preview_img_md_url = $preview_img_md['url'];
+            $preview_img_sm_url = $preview_img_sm['url']; ?>
+      <img id="web-preview-img-lg" src="<?php echo $preview_img_lg_url; ?>" alt="Desktop Preview Image of the Project - <?php the_title();?>" class="sr-only">
+      <img id="web-preview-img-md" src="<?php echo $preview_img_md_url; ?>" alt="Tablet Preview Image of the Project - <?php the_title();?>">
+      <img id="web-preview-img-sm" src="<?php echo $preview_img_sm_url; ?>" alt="Phone Preview Image of the Project - <?php the_title();?>">
     </div>
+
   </div>
 
   <div class="buttons-devices">

@@ -17,3 +17,38 @@ body{padding-top:4.1em;font-family:"Source Sans Pro",sans-serif;font-size:1.6em;
 .loading article{
   opacity:0;
 }
+
+.viewport img{
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+
+.device-desktop #web-preview-img-lg{
+  display:block;
+}
+
+.device-desktop #web-preview-img-md,
+.device-desktop #web-preview-img-sm{
+  display: none;
+}
+
+.device-tablet #web-preview-img-md{
+  display:block;
+}
+
+.device-tablet #web-preview-img-sm,
+.device-tablet #web-preview-img-lg{
+  display:none;
+}
+
+.device-phone #web-preview-img-sm{
+  display:block;
+}
+
+.device-phone #web-preview-img-md,
+.device-phone #web-preview-img-lg{
+  display:none;
+}
