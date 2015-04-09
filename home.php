@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-<body data-spy="scroll" data-target=".top-nav" data-offset="70" <?php body_class(); ?> id="home">
+<body data-spy="scroll" data-target=".top-nav" data-offset="70" <?php body_class('loading'); ?> id="home">
 
 <?php get_template_part('intro'); ?>
 

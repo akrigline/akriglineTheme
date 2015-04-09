@@ -20,11 +20,18 @@
 
           <li>
             <figure>
-              <?php the_post_thumbnail( 'full' ); ?>
+
+            <?php 
+              $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+            ?>
+
+              <img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+
+
 
               <a href="<?php the_permalink(); ?>">
-                <figcaption class="col-xs-10 col-sm-6 col-md-4">
-                  <h1><?php the_title(); ?></h1>
+                <figcaption class="col-xs-10 col-sm-8 col-md-4">
+                  <h2><?php the_title(); ?></h2>
                   <div class="col-xs-12">
                   <?php //Gets tags for post and puts them into h5
                   $posttags = get_the_tags();
@@ -91,7 +98,7 @@
 
               <a href="<?php the_permalink(); ?>">
                 <figcaption class="col-xs-10 col-sm-6 col-md-4">
-                  <h2><?php the_title(); ?></h2>
+                  <h3><?php the_title(); ?></h3>
                   
                   <?php //Gets tags for post and puts them into h5
                   $posttags = get_the_tags();

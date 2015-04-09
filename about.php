@@ -14,7 +14,7 @@
 
 <section>
   <header class="col-xs-12">
-    <h1 class="col-xl-offset-1 col-xs-12"><?php the_field('blurb_1'); ?><span class="hidden-md hidden-lg"><?php the_field('blurb_2'); ?></span></h1>
+    <h1 class="col-xl-offset-1 col-xs-12"><?php the_field('blurb_1'); ?><span class="hidden-md hidden-lg"> <?php the_field('blurb_2'); ?></span></h1>
   </header>
   <div class="col-xs-12 col-sm-10 col-sm-offset-2">
       <?php the_content(); ?>

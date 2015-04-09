@@ -17,7 +17,7 @@
     <header class="row">
       <div class="col-xs-12 col-sm-2 text-center">
         <?php 
-        $iconField = get_field('icon');
+        $iconField = get_field('resume-icon');
         $icon = $iconField['url'];
         ?>
 
