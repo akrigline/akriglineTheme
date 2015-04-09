@@ -109,57 +109,78 @@ if (document.getElementById('home')) {
 };
 
 
-/* 
-Set up iFrame on Web Portfolio Pages 
-*/
-var iframeError;
 
-//Start the iFrame countdown after telling it where to load
-function change() {
-    var url = $('.viewport').attr('data-url');
-    console.log(url);
-    $('#web-preview').attr('src', url);
-    iframeError = setTimeout('error()', 10000);
+/*
+Detect iOS8 (iframe scaling is buggy and causes browser to crash);
+Load in backup images instead
+*/
+
+var isIOS8 = function() {
+  var deviceAgent = navigator.userAgent.toLowerCase();
+  return /(iphone|ipod|ipad).* os 8_/.test(deviceAgent);
 }
 
-//What to do if the iframe doesn't load within 10 seconds
-function error() {
+
+if ( isIOS8() ) {
     $('#web-preview').remove();
     $('.viewport').removeClass('loading');
     $('#web-preview-img-lg').removeClass('sr-only');
+
+} else {
+    /* 
+    Set up iFrame on Web Portfolio Pages 
+    */
+    var iframeError;
+
+    //Start the iFrame countdown after telling it where to load
+    function change() {
+        var url = $('.viewport').attr('data-url');
+        console.log(url);
+        $('#web-preview').attr('src', url);
+        iframeError = setTimeout('error()', 10000);
+    }
+
+    //What to do if the iframe doesn't load within 10 seconds
+    function error() {
+        $('#web-preview').remove();
+        $('.viewport').removeClass('loading');
+        $('#web-preview-img-lg').removeClass('sr-only');
+    }
+
+    //Initialize on document ready
+    $(document).ready(change);
+
+    //Stop the countdown when the iframe loads
+    $('#web-preview').load( function () {
+        $('.viewport').removeClass('loading');
+        clearTimeout(iframeError);
+    });
+
+    /*
+    Ask for Device Width
+    and Iframe width
+    Divide Device by iframe
+    apply decimal to transform
+    */
+
+    function iframeWidth() {
+        $device = $('.device');
+        $iframe = $('.viewport iframe');
+
+        var deviceWidth = $device.width();
+        var frameWidth = $iframe.width();
+        var scale = deviceWidth / frameWidth;
+
+        $iframe.css({
+            "// zoom": scale,
+            "-moz-transform": "scale(" + scale + ")",
+            "-o-transform": "scale(" + scale + ")",
+            "-webkit-transform": "scale(" + scale + ")",
+        });
+    };
+
 }
 
-//Initialize on document ready
-$(document).ready(change);
-
-//Stop the countdown when the iframe loads
-$('#web-preview').load( function () {
-    $('.viewport').removeClass('loading');
-    clearTimeout(iframeError);
-});
-
-/*
-Ask for Device Width
-and Iframe width
-Divide Device by iframe
-apply decimal to transform
-*/
-
-function iframeWidth() {
-    $device = $('.device');
-    $iframe = $('.viewport iframe');
-
-    var deviceWidth = $device.width();
-    var frameWidth = $iframe.width();
-    var scale = deviceWidth / frameWidth;
-
-    $iframe.css({
-        "// zoom": scale,
-        "-moz-transform": "scale(" + scale + ")",
-        "-o-transform": "scale(" + scale + ")",
-        "-webkit-transform": "scale(" + scale + ")",
-    });
-};
 
 $(document).ready( iframeWidth );
 $(window).resize( iframeWidth );
@@ -214,3 +235,37 @@ $('#mbp-toggle').click( function(){
 
     }
 });
+
+
+
+
+/* 
+Set up iFrame on Web Portfolio Pages 
+var iframeError;
+
+//Start the iFrame countdown after telling it where to load
+function change() {
+    var url = $('.viewport').attr('data-url');
+    console.log(url);
+    $('#web-preview').attr('src', url);
+    iframeError = setTimeout('error()', 10000);
+}
+
+//What to do if the iframe doesn't load within 10 seconds
+function error() {
+    $('#web-preview').remove();
+    $('.viewport').removeClass('loading');
+    $('#web-preview-img-lg').removeClass('sr-only');
+}
+
+//Initialize on document ready
+$(document).ready(change);
+
+//Stop the countdown when the iframe loads
+$('#web-preview').load( function () {
+    $('.viewport').removeClass('loading');
+    clearTimeout(iframeError);
+});
+
+*/
+
