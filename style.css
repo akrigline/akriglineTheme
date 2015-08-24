@@ -226,6 +226,9 @@ article {
 .navbar-collapse {
   background: #000000;
 }
+.navbar-collapse.in{
+  overflow-y:initial;
+}
 .single .top-nav {
   background: #000000;
 }
@@ -296,6 +299,9 @@ footer#contact article .btn-submit {
   width: 100%;
   background: #000000;
   color: #ffffff;
+}
+.social li{
+  display:inline-block;
 }
 .social a:hover img {
   -webkit-transform: scale(1.2);
@@ -777,6 +783,9 @@ Portfolio Single Page
   margin-top: 1em;
   border-radius: .2em;
   color: #000000;
+}
+.sharedaddy{
+  margin-top:1em;
 }
 /*
 Adapted from Animate.css - http://daneden.me/animate

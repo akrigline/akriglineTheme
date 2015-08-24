@@ -18,12 +18,15 @@
 
       <div class="social col-xs-12">
         <h5>Feel free to stalk me</h5>
-        <a href=""><img src="<?php bloginfo('template_directory'); ?>/img/svg/github.svg" alt=""></a>
-        <a href=""><img src="<?php bloginfo('template_directory'); ?>/img/svg/linkedin.svg" alt=""></a>
-        <a href=""><img src="<?php bloginfo('template_directory'); ?>/img/svg/gplus.svg" alt=""></a>
-        <a href=""><img src="<?php bloginfo('template_directory'); ?>/img/svg/designspiration.svg" alt=""></a>
-        <a href=""><img src="<?php bloginfo('template_directory'); ?>/img/svg/twitter.svg" alt=""></a>
-        <a href=""><img src="<?php bloginfo('template_directory'); ?>/img/svg/tumblr.svg" alt=""></a>
+        <ul class="list-unstyled">
+          <li><a href="https://github.com/akrigline" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/svg/github.svg" alt=""></a></li>
+          <li><a href="https://linkedin.com/in/akrigline" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/svg/linkedin.svg" alt=""></a></li>
+          <li><a href="http://akrigline.tumblr.com" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/svg/tumblr.svg" alt=""></a></li>
+          <li><a href="http://behance.net/akrigline" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/svg/behance.svg" alt=""></a></li>
+          <li><a href="https://twitter.com/akrigline" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/svg/twitter.svg" alt=""></a></li>
+          <li><a href="https://plus.google.com/+AndrewKrigline" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/svg/gplus.svg" alt=""></a></li>
+          <li><a href="http://designspiration.net/akrigline" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/svg/designspiration.svg" alt=""></a></li>
+        </ul>
       </div><!-- social -->
 
     </div>

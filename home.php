@@ -23,6 +23,7 @@ get_header(); ?>
 		<?php get_template_part('about'); ?>
 
 		<?php get_template_part('resume'); ?>
+    <p class="text-center"><a href="<?php bloginfo('template_directory');?>/img/krigline-resume-web.pdf">Download a printable copy of my resume</a></p>
 	</div>
 </article>
 
